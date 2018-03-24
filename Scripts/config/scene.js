@@ -4,7 +4,7 @@ var config;
     (function (Scene) {
         Scene[Scene["START"] = 0] = "START";
         Scene[Scene["PLAY"] = 1] = "PLAY";
-        Scene[Scene["PLAY2"] = 2] = "PLAY2";
+        Scene[Scene["PLAYTWO"] = 2] = "PLAYTWO";
         Scene[Scene["OVER"] = 3] = "OVER";
     })(Scene = config.Scene || (config.Scene = {}));
 })(config || (config = {}));

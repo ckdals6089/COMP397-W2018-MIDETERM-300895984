@@ -26,18 +26,18 @@ var scenes;
         // Public Methods
         // Initialize Game Variables and objects
         StartScene.prototype.Start = function () {
-            this._ocean = new objects.Ocean();
+            this._ocean2 = new objects.Oceantwo();
             this._welcomeLabel = new objects.Label("Mail Pilot", "60px", "Dock51", "#FFFF00", 320, 240, true);
             this._startButton = new objects.Button("startButton", 320, 340);
             this.Main();
         };
         StartScene.prototype.Update = function () {
-            this._ocean.Update();
+            this._ocean2.Update();
         };
         // This is where the fun happens
         StartScene.prototype.Main = function () {
             // add the ocean object
-            this.addChild(this._ocean);
+            this.addChild(this._ocean2);
             // add the welcome label to the scene
             this.addChild(this._welcomeLabel);
             // add the startButton to the scene

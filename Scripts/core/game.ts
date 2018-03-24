@@ -80,6 +80,7 @@
   assetManifest = [
     { id: "textureAtlas", src: "./Assets/sprites/textureAtlas.png" },
     { id: "ocean", src: "./Assets/images/ocean.gif" },
+    { id: "ocean2", src: "./Assets/images/ocean2.gif" },
     { id: "engine", src: "./Assets/audio/engine.ogg" },
     { id: "coin", src: "./Assets/audio/coin.wav" },
     { id: "life", src: "./Assets/audio/life.wav" },
@@ -139,8 +140,8 @@
       case config.Scene.PLAY:
         currentScene = new scenes.PlayScene();
         break;
-        case config.Scene.PLAY2:
-        currentScene = new scenes.Play2Scene();
+        case config.Scene.PLAYTWO:
+        currentScene = new scenes.PlayTwoScene();
         break;
       case config.Scene.OVER:
         currentScene = new scenes.OverScene();

@@ -10,20 +10,26 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var scenes;
 (function (scenes) {
-    var Play2Scene = /** @class */ (function (_super) {
-        __extends(Play2Scene, _super);
+    var PlayTwoScene = /** @class */ (function (_super) {
+        __extends(PlayTwoScene, _super);
         // Public Properties
         // Constructor
-        function Play2Scene() {
+        function PlayTwoScene() {
             var _this = _super.call(this) || this;
             _this.Start();
             return _this;
         }
         // Private Mathods
+        PlayTwoScene.prototype._sucessStage = function () {
+            if (this._scoreBoard.Score >= 100) {
+                managers.Game.currentScene = config.Scene.PLAY2;
+                //TODO: Build a new scene ? or display a congratulation label?
+            }
+        };
         // Public Methods
         // Initialize Game Variables and objects
-        Play2Scene.prototype.Start = function () {
-            this._ocean = new objects.Ocean();
+        PlayTwoScene.prototype.Start = function () {
+            this._ocean2 = new objects.Oceantwo();
             this._plane = new objects.Plane();
             managers.Game.plane = this._plane;
             this._coin = new objects.Coin();
@@ -44,9 +50,9 @@ var scenes;
             this.Main();
         };
         // triggered every frame
-        Play2Scene.prototype.Update = function () {
+        PlayTwoScene.prototype.Update = function () {
             var _this = this;
-            this._ocean.Update();
+            this._ocean2.Update();
             this._plane.Update();
             this._coin.x = this._island.x;
             this._coin.y = this._island.y;
@@ -66,10 +72,10 @@ var scenes;
             }
         };
         // This is where the fun happens
-        Play2Scene.prototype.Main = function () {
+        PlayTwoScene.prototype.Main = function () {
             var _this = this;
             // add the ocean to the scene
-            this.addChild(this._ocean);
+            this.addChild(this._ocean2);
             // add the island to the scene
             this.addChild(this._island);
             // add the coin to the scene
@@ -85,8 +91,8 @@ var scenes;
             this.addChild(this._scoreBoard.LivesLabel);
             this.addChild(this._scoreBoard.ScoreLabel);
         };
-        return Play2Scene;
+        return PlayTwoScene;
     }(objects.Scene));
-    scenes.Play2Scene = Play2Scene;
+    scenes.PlayTwoScene = PlayTwoScene;
 })(scenes || (scenes = {}));
-//# sourceMappingURL=play2.js.map
+//# sourceMappingURL=playtwo.js.map

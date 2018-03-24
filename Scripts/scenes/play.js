@@ -22,7 +22,7 @@ var scenes;
         // Private Mathods
         PlayScene.prototype._sucessStage = function () {
             if (this._scoreBoard.Score >= 100) {
-                managers.Game.currentScene = config.Scene.PLAY2;
+                managers.Game.currentScene = config.Scene.PLAYTWO;
                 //TODO: Build a new scene ? or display a congratulation label?
             }
         };
