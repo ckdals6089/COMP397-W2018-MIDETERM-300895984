@@ -20,12 +20,6 @@ var scenes;
             return _this;
         }
         // Private Mathods
-        PlayScene.prototype._sucessStage = function () {
-            if (this._scoreBoard.Score >= 100) {
-                managers.Game.currentScene = config.Scene.PLAYTWO;
-                //TODO: Build a new scene ? or display a congratulation label?
-            }
-        };
         // Public Methods
         // Initialize Game Variables and objects
         PlayScene.prototype.Start = function () {
@@ -69,6 +63,9 @@ var scenes;
             if (this._scoreBoard.Lives <= 0) {
                 this._engineSound.stop();
                 managers.Game.currentScene = config.Scene.OVER;
+            }
+            if (this._scoreBoard.Score >= 100 || this._scoreBoard.Lives <= 0) {
+                managers.Game.currentScene = config.Scene.PLAYTWO;
             }
         };
         // This is where the fun happens

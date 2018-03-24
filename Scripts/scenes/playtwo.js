@@ -20,12 +20,6 @@ var scenes;
             return _this;
         }
         // Private Mathods
-        PlayTwoScene.prototype._sucessStage = function () {
-            if (this._scoreBoard.Score >= 100) {
-                managers.Game.currentScene = config.Scene.PLAYTWO;
-                //TODO: Build a new scene ? or display a congratulation label?
-            }
-        };
         // Public Methods
         // Initialize Game Variables and objects
         PlayTwoScene.prototype.Start = function () {
@@ -36,7 +30,7 @@ var scenes;
             this._island = new objects.Island();
             // instantiate the cloud array
             this._clouds = new Array();
-            this._cloudNum = 1;
+            this._cloudNum = 2;
             // loop and add each cloud to the array
             for (var count = 0; count < this._cloudNum; count++) {
                 this._clouds[count] = new objects.Cloud();

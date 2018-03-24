@@ -34,7 +34,7 @@ module objects {
   
       // Initializes variables and creates new objects
       public Start():void {
-        this._dx = 5;
+        this._dx = 7;
         this._reset();
       }
   

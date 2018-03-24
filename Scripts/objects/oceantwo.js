@@ -37,7 +37,7 @@ var objects;
         // public methods
         // Initializes variables and creates new objects
         Oceantwo.prototype.Start = function () {
-            this._dx = 5;
+            this._dx = 7;
             this._reset();
         };
         // updates the game object every frame
