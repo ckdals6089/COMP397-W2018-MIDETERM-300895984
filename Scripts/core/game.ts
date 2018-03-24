@@ -13,6 +13,7 @@
   let currentScene: objects.Scene;
   let currentState: number;
   let keyboardManager: managers.Keyboard;
+  let keyboardManagertwo: managers.KeyboardTwo;
   let textureAtlasData: any;
   let textureAtlas: createjs.SpriteSheet;
 
@@ -80,7 +81,6 @@
   assetManifest = [
     { id: "textureAtlas", src: "./Assets/sprites/textureAtlas.png" },
     { id: "ocean", src: "./Assets/images/ocean.gif" },
-    { id: "ocean2", src: "./Assets/images/ocean2.gif" },
     { id: "engine", src: "./Assets/audio/engine.ogg" },
     { id: "coin", src: "./Assets/audio/coin.wav" },
     { id: "life", src: "./Assets/audio/life.wav" },

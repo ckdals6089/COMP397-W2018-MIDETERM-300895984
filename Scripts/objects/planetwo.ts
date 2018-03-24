@@ -27,8 +27,8 @@ module objects {
         this.planeFlash = new objects.PlaneFlash();
         this.planeFlash.alpha = 1;
         this.planeFlash.on("animationend", this._animationEnded.bind(this), false );
-  
-        this.y = 400;
+        this.rotation = 90;
+        this.y = 200;
         this.x = 100;
       }
   
@@ -65,8 +65,8 @@ module objects {
       // check to see if some boundary has been passed
       public CheckBounds():void {
         // right boundary
-        if(this.y >= 640 - this.halfHeight) {
-          this.y = 640 - this.halfHeight;
+        if(this.y >= 480 - this.halfHeight) {
+          this.y = 480 - this.halfHeight;
         }
   
         // left boundary

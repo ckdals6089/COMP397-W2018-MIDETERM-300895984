@@ -2,12 +2,13 @@ module objects {
     export class Oceantwo extends createjs.Bitmap {
       // private instance variables
       private _dx: number;
-  
+      private _dy: number;
+
       // public properties
   
       // Constructor
       constructor() {
-        super(managers.Game.assetManager.getResult("ocean2"));
+        super(managers.Game.assetManager.getResult("ocean"));
         this.Start();
       }
   
@@ -15,7 +16,9 @@ module objects {
   
       // reset the objects location to some value
       private _reset():void {
-        this.x = -960;
+        this.rotation= 90;
+        this.x = 1200;
+        
       }
   
       // move the object to some new location
@@ -25,7 +28,8 @@ module objects {
   
       // check to see if some boundary has been passed
       private _checkBounds():void {
-        if(this.x >= 0) {
+        
+        if(this.x <= 640) {
           this._reset();
         }
       }
@@ -34,7 +38,7 @@ module objects {
   
       // Initializes variables and creates new objects
       public Start():void {
-        this._dx = 7;
+        this._dx = 5;
         this._reset();
       }
   

@@ -23,11 +23,11 @@ var scenes;
         // Public Methods
         // Initialize Game Variables and objects
         PlayTwoScene.prototype.Start = function () {
-            this._ocean2 = new objects.Oceantwo();
+            this._oceantwo = new objects.Oceantwo();
             this._planetwo = new objects.PlaneTwo();
             managers.Game.planetwo = this._planetwo;
-            this._coin = new objects.Coin();
-            this._island = new objects.Island();
+            this._cointwo = new objects.CoinTwo();
+            this._islandtwo = new objects.Island();
             // instantiate the cloud array
             this._cloudstwo = new Array();
             this._cloudNum = 2;
@@ -46,14 +46,14 @@ var scenes;
         // triggered every frame
         PlayTwoScene.prototype.Update = function () {
             var _this = this;
-            this._ocean2.Update();
+            this._oceantwo.Update();
             this._planetwo.Update();
-            this._coin.x = this._island.x;
-            this._coin.y = this._island.y;
-            this._coin.Update();
-            this._island.Update();
+            this._cointwo.y = this._islandtwo.y;
+            this._cointwo.x = this._islandtwo.x;
+            this._cointwo.Update();
+            this._islandtwo.Update();
             // check collision between plane and coin
-            managers.Collision.Check(this._planetwo, this._coin);
+            managers.Collision.Check(this._planetwo, this._cointwo);
             this._cloudstwo.forEach(function (cloud) {
                 cloud.Update();
                 // check collision between plane and current cloud
@@ -69,11 +69,11 @@ var scenes;
         PlayTwoScene.prototype.Main = function () {
             var _this = this;
             // add the ocean to the scene
-            this.addChild(this._ocean2);
+            this.addChild(this._oceantwo);
             // add the island to the scene
-            this.addChild(this._island);
+            this.addChild(this._islandtwo);
             // add the coin to the scene
-            this.addChild(this._coin);
+            this.addChild(this._cointwo);
             // add the plane to the scene
             this.addChild(this._planetwo);
             this.addChild(this._planetwo.planeFlash); // add the plane flashing effect

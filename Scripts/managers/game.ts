@@ -6,9 +6,10 @@ module managers {
     public static currentSceneObject: objects.Scene;
     public static scoreBoard: managers.ScoreBoard;
     public static keyboardManager: managers.Keyboard;
+    public static keyboardManagertwo: managers.KeyboardTwo;
     public static HighScore: number = 0;
     public static textureAtlas: createjs.SpriteSheet;
-    public static planetwo: objects.PlaneTwo;
     public static plane: objects.Plane;
+    public static planetwo: objects.PlaneTwo;
   }
 }

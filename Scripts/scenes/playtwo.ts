@@ -1,15 +1,15 @@
 module scenes {
     export class PlayTwoScene extends objects.Scene {
       // Private Instance Variables
-      private _ocean2: objects.Oceantwo;
+      private _oceantwo: objects.Oceantwo;
       private _planetwo: objects.PlaneTwo;
-      private _island: objects.Island;
+      private _islandtwo: objects.IslandTwo;
       private _cloudstwo: objects.CloudTwo[];
       private _cloudNum: number;
       private _scoreBoard: managers.ScoreBoard;
   
       private _engineSound: createjs.AbstractSoundInstance;
-      private _coin: objects.Coin;
+      private _cointwo: objects.CoinTwo;
   
       // Public Properties
   
@@ -27,12 +27,12 @@ module scenes {
   
       // Initialize Game Variables and objects
       public Start(): void {
-        this._ocean2 = new objects.Oceantwo();
+        this._oceantwo = new objects.Oceantwo();
         this._planetwo = new objects.PlaneTwo();
         managers.Game.planetwo = this._planetwo;
   
-        this._coin = new objects.Coin();
-        this._island = new objects.Island();
+        this._cointwo = new objects.CoinTwo();
+        this._islandtwo = new objects.Island();
   
         // instantiate the cloud array
         this._cloudstwo = new Array<objects.Cloud>();
@@ -55,17 +55,17 @@ module scenes {
   
       // triggered every frame
       public Update(): void {
-        this._ocean2.Update();
+        this._oceantwo.Update();
         this._planetwo.Update();
   
-        this._coin.x = this._island.x;
-        this._coin.y = this._island.y;
-        this._coin.Update();
+        this._cointwo.y = this._islandtwo.y;
+        this._cointwo.x = this._islandtwo.x;
+        this._cointwo.Update();
   
-        this._island.Update();
+        this._islandtwo.Update();
   
         // check collision between plane and coin
-        managers.Collision.Check(this._planetwo, this._coin);
+        managers.Collision.Check(this._planetwo, this._cointwo);
   
         this._cloudstwo.forEach(cloud => {
           cloud.Update();
@@ -84,13 +84,13 @@ module scenes {
       // This is where the fun happens
       public Main(): void {
         // add the ocean to the scene
-        this.addChild(this._ocean2);
+        this.addChild(this._oceantwo);
   
         // add the island to the scene
-        this.addChild(this._island);
+        this.addChild(this._islandtwo);
   
         // add the coin to the scene
-        this.addChild(this._coin);
+        this.addChild(this._cointwo);
   
         // add the plane to the scene
         this.addChild(this._planetwo);

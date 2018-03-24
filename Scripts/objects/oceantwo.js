@@ -15,14 +15,15 @@ var objects;
         // public properties
         // Constructor
         function Oceantwo() {
-            var _this = _super.call(this, managers.Game.assetManager.getResult("ocean2")) || this;
+            var _this = _super.call(this, managers.Game.assetManager.getResult("ocean")) || this;
             _this.Start();
             return _this;
         }
         // private methods
         // reset the objects location to some value
         Oceantwo.prototype._reset = function () {
-            this.x = -960;
+            this.rotation = 90;
+            this.x = 1200;
         };
         // move the object to some new location
         Oceantwo.prototype._move = function () {
@@ -30,14 +31,14 @@ var objects;
         };
         // check to see if some boundary has been passed
         Oceantwo.prototype._checkBounds = function () {
-            if (this.x >= 0) {
+            if (this.x <= 640) {
                 this._reset();
             }
         };
         // public methods
         // Initializes variables and creates new objects
         Oceantwo.prototype.Start = function () {
-            this._dx = 7;
+            this._dx = 5;
             this._reset();
         };
         // updates the game object every frame

@@ -10,49 +10,47 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var objects;
 (function (objects) {
-    var CloudTwo = /** @class */ (function (_super) {
-        __extends(CloudTwo, _super);
+    var IslandTwo = /** @class */ (function (_super) {
+        __extends(IslandTwo, _super);
         // private instance variables
         // public properties
         // Constructor
-        function CloudTwo() {
-            var _this = _super.call(this, "cloud") || this;
+        function IslandTwo() {
+            var _this = _super.call(this, "island") || this;
             _this.Start();
             return _this;
         }
         // private methods
         // public methods
         // Initializes variables and creates new objects
-        CloudTwo.prototype.Start = function () {
-            this.Reset();
+        IslandTwo.prototype.Start = function () {
             this.rotation = 90;
+            this._dx = 5;
+            this.Reset();
         };
         // updates the game object every frame
-        CloudTwo.prototype.Update = function () {
+        IslandTwo.prototype.Update = function () {
             this.Move();
             this.CheckBounds();
         };
         // reset the objects location to some value
-        CloudTwo.prototype.Reset = function () {
+        IslandTwo.prototype.Reset = function () {
             this.x = 680;
             this.y = Math.floor((Math.random() * (480 - this.halfHeight)));
-            this._dy = Math.floor((Math.random() * 4) - 2);
-            this._dx = Math.floor((Math.random() * 5) + 5);
         };
         // move the object to some new location
-        CloudTwo.prototype.Move = function () {
-            this.y -= this._dy;
+        IslandTwo.prototype.Move = function () {
             this.x -= this._dx;
         };
         // check to see if some boundary has been passed
-        CloudTwo.prototype.CheckBounds = function () {
+        IslandTwo.prototype.CheckBounds = function () {
             // check lower bounds
-            if (this.x <= -this.halfWidth) {
+            if (this.x >= -this.width) {
                 this.Reset();
             }
         };
-        return CloudTwo;
+        return IslandTwo;
     }(objects.GameObject));
-    objects.CloudTwo = CloudTwo;
+    objects.IslandTwo = IslandTwo;
 })(objects || (objects = {}));
-//# sourceMappingURL=cloudtwo.js.map
+//# sourceMappingURL=islandtwo.js.map
