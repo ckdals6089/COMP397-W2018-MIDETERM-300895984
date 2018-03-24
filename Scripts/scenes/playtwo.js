@@ -22,7 +22,7 @@ var scenes;
         // Private Mathods
         PlayTwoScene.prototype._sucessStage = function () {
             if (this._scoreBoard.Score >= 100) {
-                managers.Game.currentScene = config.Scene.PLAY2;
+                managers.Game.currentScene = config.Scene.PLAYTWO;
                 //TODO: Build a new scene ? or display a congratulation label?
             }
         };
@@ -36,7 +36,7 @@ var scenes;
             this._island = new objects.Island();
             // instantiate the cloud array
             this._clouds = new Array();
-            this._cloudNum = 3;
+            this._cloudNum = 1;
             // loop and add each cloud to the array
             for (var count = 0; count < this._cloudNum; count++) {
                 this._clouds[count] = new objects.Cloud();

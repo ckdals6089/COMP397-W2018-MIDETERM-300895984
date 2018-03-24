@@ -25,7 +25,7 @@ module scenes {
       private _sucessStage():void{
               
         if(this._scoreBoard.Score >= 100) {
-           managers.Game.currentScene = config.Scene.PLAY2; 
+           managers.Game.currentScene = config.Scene.PLAYTWO; 
            
            //TODO: Build a new scene ? or display a congratulation label?
         }
@@ -44,7 +44,7 @@ module scenes {
   
         // instantiate the cloud array
         this._clouds = new Array<objects.Cloud>();
-        this._cloudNum = 3;
+        this._cloudNum = 1;
         // loop and add each cloud to the array
         for (let count = 0; count < this._cloudNum; count++) {
           this._clouds[count] = new objects.Cloud();
