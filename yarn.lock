@@ -32,6 +32,10 @@
   dependencies:
     "@types/createjs-lib" "*"
 
+add@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/add/-/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
+
 easeljs@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/easeljs/-/easeljs-1.0.2.tgz#68fdcc69d0f217394e2ebf51ae047428a81240de"
@@ -47,3 +51,7 @@ soundjs@^1.0.1:
 tweenjs@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/tweenjs/-/tweenjs-1.0.2.tgz#768869c4d4ba91fdb4c5ccc661969c58138555af"
+
+yarn@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.5.1.tgz#e8680360e832ac89521eb80dad3a7bc27a40bab4"
