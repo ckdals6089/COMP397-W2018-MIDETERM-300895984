@@ -13,11 +13,13 @@
 /// <reference path="../../Scripts/objects/button.ts"/>
 /// <reference path="../../Scripts/objects/ocean.ts"/>
 /// <reference path="../../Scripts/objects/oceantwo.ts"/>
+/// <reference path="../../Scripts/objects/planetwo.ts"/>
 /// <reference path="../../Scripts/objects/plane.ts"/>
 /// <reference path="../../Scripts/objects/planeflash.ts"/>
 /// <reference path="../../Scripts/objects/coin.ts"/>
 /// <reference path="../../Scripts/objects/island.ts"/>
 /// <reference path="../../Scripts/objects/cloud.ts"/>
+/// <reference path="../../Scripts/objects/cloudtwo.ts"/>
 /// <reference path="../../Scripts/scenes/over.ts"/>
 /// <reference path="../../Scripts/scenes/playtwo.ts"/>
 /// <reference path="../../Scripts/scenes/play.ts"/>

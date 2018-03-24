@@ -24,16 +24,16 @@ var scenes;
         // Initialize Game Variables and objects
         PlayTwoScene.prototype.Start = function () {
             this._ocean2 = new objects.Oceantwo();
-            this._plane = new objects.Plane();
-            managers.Game.plane = this._plane;
+            this._planetwo = new objects.PlaneTwo();
+            managers.Game.planetwo = this._planetwo;
             this._coin = new objects.Coin();
             this._island = new objects.Island();
             // instantiate the cloud array
-            this._clouds = new Array();
+            this._cloudstwo = new Array();
             this._cloudNum = 2;
             // loop and add each cloud to the array
             for (var count = 0; count < this._cloudNum; count++) {
-                this._clouds[count] = new objects.Cloud();
+                this._cloudstwo[count] = new objects.Cloud();
             }
             this._engineSound = createjs.Sound.play("engine");
             this._engineSound.loop = -1; // play forever
@@ -47,17 +47,17 @@ var scenes;
         PlayTwoScene.prototype.Update = function () {
             var _this = this;
             this._ocean2.Update();
-            this._plane.Update();
+            this._planetwo.Update();
             this._coin.x = this._island.x;
             this._coin.y = this._island.y;
             this._coin.Update();
             this._island.Update();
             // check collision between plane and coin
-            managers.Collision.Check(this._plane, this._coin);
-            this._clouds.forEach(function (cloud) {
+            managers.Collision.Check(this._planetwo, this._coin);
+            this._cloudstwo.forEach(function (cloud) {
                 cloud.Update();
                 // check collision between plane and current cloud
-                managers.Collision.Check(_this._plane, cloud);
+                managers.Collision.Check(_this._planetwo, cloud);
             });
             // if lives fall below zero switch scenes to the game over scene
             if (this._scoreBoard.Lives <= 0) {
@@ -75,10 +75,10 @@ var scenes;
             // add the coin to the scene
             this.addChild(this._coin);
             // add the plane to the scene
-            this.addChild(this._plane);
-            this.addChild(this._plane.planeFlash); // add the plane flashing effect
+            this.addChild(this._planetwo);
+            this.addChild(this._planetwo.planeFlash); // add the plane flashing effect
             // add clouds to the scene
-            this._clouds.forEach(function (cloud) {
+            this._cloudstwo.forEach(function (cloud) {
                 _this.addChild(cloud);
             });
             // add scoreboard labels to the scene
