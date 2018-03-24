@@ -22,7 +22,14 @@ module scenes {
 
     // Private Mathods
 
-
+    private _sucessStage():void{
+            
+      if(this._scoreBoard.Score >= 100) {
+         managers.Game.currentScene = config.Scene.PLAY2; 
+         
+         //TODO: Build a new scene ? or display a congratulation label?
+      }
+ }
 
     // Public Methods
 
