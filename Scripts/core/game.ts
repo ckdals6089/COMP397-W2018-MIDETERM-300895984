@@ -139,6 +139,9 @@
       case config.Scene.PLAY:
         currentScene = new scenes.PlayScene();
         break;
+        case config.Scene.PLAY2:
+        currentScene = new scenes.PlayScene();
+        break;
       case config.Scene.OVER:
         currentScene = new scenes.OverScene();
         break;
